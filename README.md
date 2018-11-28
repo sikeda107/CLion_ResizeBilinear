@@ -18,3 +18,12 @@ OpenCVではアンチエイリアシングが実行されていない.
 
 参考 : [MATLAB vs C++ vs OpenCV - imresize - Stack Overflow](https://stackoverflow.com/questions/26812289/matlab-vs-c-vs-opencv-imresize)
 
+## CMakeLists.txtについて
+OpenCV用に下記をCMakeListsに追加した.
+詳しくは公式の「[OpenCV: Using OpenCV with gcc and CMake](https://docs.opencv.org/master/db/df5/tutorial_linux_gcc_cmake.html)」を参照.
+```
+cmake_minimum_required(VERSION 2.8)
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+target_link_libraries( ResizeBilinear ${OpenCV_LIBS} )
+```
